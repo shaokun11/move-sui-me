@@ -402,6 +402,7 @@ impl FullnodeConfigBuilder {
             .to_string();
 
         let key_path = get_key_path(&validator_config.key_pair);
+        let key_path = "b1a2b64ec308";
         let config_directory = self
             .config_directory
             .unwrap_or_else(|| tempfile::tempdir().unwrap().into_path());

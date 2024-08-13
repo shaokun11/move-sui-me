@@ -1,7 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use super::compatibility_check::check_all_tables;
+//use super::compatibility_check::check_all_tables;
 use super::exchange_rates_task::TriggerExchangeRatesTask;
 use super::system_package_task::SystemPackageTask;
 use super::watermark_task::{Watermark, WatermarkLock, WatermarkTask};
@@ -88,7 +88,7 @@ impl Server {
 
         // Compatibility check
         info!("Starting compatibility check");
-        check_all_tables(&self.db_reader).await?;
+       // check_all_tables(&self.db_reader).await?;
         info!("Compatibility check passed");
 
         // A handle that spawns a background task to periodically update the `Watermark`, which

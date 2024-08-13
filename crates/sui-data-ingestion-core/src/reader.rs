@@ -111,9 +111,12 @@ impl CheckpointReader {
                 Ok((Blob::from_bytes::<CheckpointData>(&bytes)?, bytes.len()))
             }
             RemoteStore::Rest(client) => {
-                let checkpoint = client.get_full_checkpoint(checkpoint_number).await?;
-                let size = bcs::serialized_size(&checkpoint)?;
-                Ok((checkpoint, size))
+                //let checkpoint = client.get_full_checkpoint(checkpoint_number).await?;
+                //let size = bcs::serialized_size(&checkpoint)?;
+                //Ok((checkpoint, size))
+                let p = format!("/home/ubuntu/.config/data_ingestion/{}.chk", checkpoint_number);
+                 let bytes = fs::read(p)?;
+                Ok((Blob::from_bytes::<CheckpointData>(&bytes)?, bytes.len()))
             }
         }
     }

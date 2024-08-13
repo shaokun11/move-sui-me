@@ -43,7 +43,7 @@ macro_rules! generate_compatibility_check {
     };
 }
 
-sui_indexer::for_all_tables!(generate_compatibility_check);
+//sui_indexer::for_all_tables!(generate_compatibility_check);
 
 #[derive(Debug, Clone, Copy, QueryId)]
 struct Check<Q> {

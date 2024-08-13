@@ -1,5 +1,3 @@
-// Copyright (c) Mysten Labs, Inc.
-// SPDX-License-Identifier: Apache-2.0
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
@@ -272,30 +270,23 @@ diesel::table! {
     }
 }
 
-#[macro_export]
-macro_rules! for_all_tables {
-    ($action:path) => {
-        $action!(
-            checkpoints,
-            epochs,
-            events,
-            events_partition_0,
-            objects,
-            objects_history,
-            objects_history_partition_0,
-            objects_snapshot,
-            packages,
-            transactions,
-            transactions_partition_0,
-            tx_calls,
-            tx_changed_objects,
-            tx_digests,
-            tx_input_objects,
-            tx_recipients,
-            tx_senders
-        );
-    };
-}
-pub use for_all_tables;
-
-for_all_tables!(diesel::allow_tables_to_appear_in_same_query);
+diesel::allow_tables_to_appear_in_same_query!(
+    checkpoints,
+    display,
+    epochs,
+    events,
+    events_partition_0,
+    objects,
+    objects_history,
+    objects_history_partition_0,
+    objects_snapshot,
+    packages,
+    transactions,
+    transactions_partition_0,
+    tx_calls,
+    tx_changed_objects,
+    tx_digests,
+    tx_input_objects,
+    tx_recipients,
+    tx_senders,
+);

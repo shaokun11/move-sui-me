@@ -650,6 +650,11 @@ async fn start(
     if with_indexer.is_some() {
         swarm_builder = swarm_builder.with_data_ingestion_dir(data_ingestion_path.clone());
     }
+    let data_ingestion_path =      config
+    .clone()
+    .unwrap_or(sui_config_dir()?)
+    .join("data_ingestion");
+    swarm_builder = swarm_builder.with_data_ingestion_dir(data_ingestion_path);
 
     let mut fullnode_url = sui_config::node::default_json_rpc_address();
     fullnode_url.set_port(fullnode_rpc_port);

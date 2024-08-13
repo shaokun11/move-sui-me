@@ -45,7 +45,7 @@ async fn start_graphiql_server_impl(
     ide_title: String,
 ) -> Result<(), Error> {
     let address = server_builder.address();
-
+info!("Launch GraphiQL IDE 1 at: http://{}", address);
     // Add GraphiQL IDE handler on GET request to `/`` endpoint
     let server = server_builder
         .route("/", axum::routing::get(graphiql))
