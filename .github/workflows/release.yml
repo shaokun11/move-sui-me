@@ -191,7 +191,7 @@ jobs:
           choco push sui.${{ env.sui_version }}.nupkg --source https://push.chocolatey.org/
 
       - name: Upload release artifacts for ${{ matrix.os }} platform
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # pin@v3
+        uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a # pin@v3
         with:
           name: sui-binaries-${{ matrix.os }}
           if-no-files-found: error
